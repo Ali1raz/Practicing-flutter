@@ -90,6 +90,7 @@ class FlashcardScreen extends StatefulWidget {
 class _FlashcardScreenState extends State<FlashcardScreen> {
   bool _showQuestion = true;
   int _currentCardIndex = 0;
+  int _score = 0;
 
   void _toggleCard() {
     setState(() {
@@ -104,11 +105,23 @@ class _FlashcardScreenState extends State<FlashcardScreen> {
     });
   }
 
+  void _handleAnswer(bool isCorrect) {
+    setState(() {
+      _score += isCorrect ? 10 : -5;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.deck.title),
+        actions: [
+          Padding(
+            padding: const EdgeInsets.only(right: 20),
+            child: Center(child: Text("Score: $_score")),
+          )
+        ],
         leading: IconButton(
             onPressed: () => Navigator.pop(context),
             icon: Icon(Icons.arrow_back)),
@@ -138,7 +151,18 @@ class _FlashcardScreenState extends State<FlashcardScreen> {
               ),
             ),
             const SizedBox(height: 30),
-            ElevatedButton(onPressed: _nextCard, child: const Text("next ")),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                ElevatedButton(onPressed: () => _handleAnswer(false),
+                  style: ElevatedButton.styleFrom(backgroundColor: Colors.red),
+                  child: const Text("Incorrect"),
+                ),
+                ElevatedButton(onPressed: () => _handleAnswer(true),
+                style: ElevatedButton.styleFrom(backgroundColor: Colors.green), child: const Text("Correct"))
+              ],
+            ),
+            ElevatedButton(onPressed: _nextCard, child: const Text("Next")),
           ],
         ),
       ),

@@ -1,9 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:md/add_flashcard_screen.dart';
 import './flashcard.dart';
 import './deck.dart';
 import './flashcard_selection_screen.dart';
 
-class DeckSelectionScreen extends StatelessWidget {
+class DeckSelectionScreen extends StatefulWidget {
+  const DeckSelectionScreen({super.key});
+
+  @override
+  _DeckSelectionScreenState createState() => _DeckSelectionScreenState();
+}
+class _DeckSelectionScreenState extends State<DeckSelectionScreen> {
   final List<Deck> decks = [
     Deck(
         title: "Flutter Basics",
@@ -21,10 +28,15 @@ class DeckSelectionScreen extends StatelessWidget {
     )
   ];
 
-  DeckSelectionScreen({super.key});
+  void _handleFlashcardAdded(Flashcard newCard, String deckTitle) {
+    setState(() {
+      decks.firstWhere((deck) => deck.title == deckTitle).cards.add(newCard);
+    });
+  }
 
   @override Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButton: FloatingActionButton(onPressed: () => Navigator.push(context, MaterialPageRoute(builder: (context)=>AddFlashcardScreen(decks: decks, onFlashcardAdd: _handleFlashcardAdded),),),child: const Icon(Icons.add),),
       appBar: AppBar(title: Text("Choose a deck")),
       body: ListView.builder(
           itemCount: decks.length,

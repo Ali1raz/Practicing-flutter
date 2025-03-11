@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import './deck_selection_screen.dart';
+import 'deck_selection_screen.dart';
 
 void main() => runApp(MyApp());
 

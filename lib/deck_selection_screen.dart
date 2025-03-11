@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:md/add_flashcard_screen.dart';
-import './flashcard.dart';
-import './deck.dart';
-import './flashcard_selection_screen.dart';
+import 'add_flashcard_screen.dart';
+import 'flashcard.dart';
+import 'deck.dart';
+import 'flashcard_selection_screen.dart';
 
 class DeckSelectionScreen extends StatefulWidget {
   const DeckSelectionScreen({super.key});

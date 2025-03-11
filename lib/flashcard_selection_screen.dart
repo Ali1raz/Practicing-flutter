@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import './deck.dart';
+import 'deck.dart';
 
 class FlashcardScreen extends StatefulWidget {
   final Deck deck;

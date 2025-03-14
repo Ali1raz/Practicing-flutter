@@ -1,30 +1,23 @@
-# md
+# Text
 
-> Till now:
-> App shows pre built two decks, 
-> 
-> navigation to visit their cards page
-> 
-> floating button to add new cards
-> 
-> create new card page shows dropdown to select deck
-> to add card into
-> 
-> question and answer textField with validation
-> 
-> when submitted goes back to home screen and update card count 
-> in deck
-> 
-> card page shows deck name, question by default
-> next button to change index of card to show
-> 
-> correct and incorrect buttons to update score [bugs]
+```dart
+Text(
+  "24, blue, w900, italic",
+  style: TextStyle(fontSize: 24, color: Colors.blue, fontWeight: FontWeight.w900, fontStyle: FontStyle.italic),
+),
+```
 
-A new Flutter project.
+```dart
+Container(margin: EdgeInsets.all(18), child: Text("center, 24, bg-red", textAlign: TextAlign.center, style: TextStyle(backgroundColor: Colors.red, color: Colors.white, fontSize: 24),)),
+```
 
-## Getting Started
+```dart
+Text("Long text very long, overflowing, shows ellipses", overflow: TextOverflow.ellipsis, style: TextStyle(fontSize: 22),),
+```
 
-This project is a starting point for a Flutter application.
+```dart
+RichText(text: TextSpan(text: "ali", style: TextStyle(fontSize: 18, backgroundColor: Colors.blueGrey), children: [TextSpan(text: "raza", style: TextStyle(color: Colors.brown, fontWeight: FontWeight.w800, fontSize: 34))]))
+```
 
 A few resources to get you started if this is your first Flutter project:
 

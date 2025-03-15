@@ -106,6 +106,33 @@ assets:
 Image.asset('assets/images/marek.jpg')
 ```
 
+## Drawer
+
+```dart
+Scaffold(
+// ...
+    drawer: Drawer(
+        child: ListView(
+            padding: EdgeInsets.zero,
+            children: [
+                const DrawerHeader(
+                    decoration: BoxDecoration(color: Colors.blue),
+                    child: Text("Header"),
+          ),
+        ListTile(
+            title: const Text('Home'),
+            selected: _selectedIndex == 0,
+            onTap: () {
+                // do anything ...
+                _onItemTapped(...);
+                // then close drawer
+                Navigator.pop(context);
+            },
+        ),
+        // ..
+)
+```
+
 ---
 
 A few resources to get you started if this is your first Flutter project:

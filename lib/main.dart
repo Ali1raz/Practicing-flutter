@@ -11,8 +11,20 @@ class MyApp extends StatelessWidget {
       title: "FlashCards App",
       theme: ThemeData(
         primarySwatch: Colors.blue,
-        scaffoldBackgroundColor: Colors.grey[100],
+        appBarTheme: const AppBarTheme(
+          backgroundColor: Colors.deepPurpleAccent,
+          foregroundColor: Colors.white
+        )
       ),
+      darkTheme: ThemeData(
+        brightness: Brightness.dark,
+          primarySwatch: Colors.blue,
+          appBarTheme: const AppBarTheme(
+              backgroundColor: Colors.deepPurpleAccent,
+              foregroundColor: Colors.white
+          )
+      ),
+      themeMode: ThemeMode.dark,
       home: Scaffold(
         appBar: AppBar(
           title: Text("Practicing Text"),

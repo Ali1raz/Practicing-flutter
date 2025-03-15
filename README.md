@@ -133,6 +133,29 @@ Scaffold(
 )
 ```
 
+## push() and pop()
+
+```dart
+TextButton(
+    onPressed: () {
+      Navigator.push(
+        context,
+        MaterialPageRoute(builder: (context) => BusinessPage())
+      );
+    },
+    child: Text("Business Page"),
+)
+```
+
+## pop():
+
+```dart
+TextButton(
+  onPressed: () => Navigator.pop(context),
+  child: Text("Go back"),
+),
+```
+
 ---
 
 A few resources to get you started if this is your first Flutter project:

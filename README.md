@@ -91,6 +91,22 @@ Container(
 ),
 ```
 
+# Image
+
+## To add assets to your application, add an assets section, like this:
+```yaml
+assets:
+- assets/images/
+```
+## Usage
+
+### local:
+
+```dart
+Image.asset('assets/images/marek.jpg')
+```
+
+---
 
 A few resources to get you started if this is your first Flutter project:
 

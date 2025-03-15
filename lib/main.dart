@@ -27,72 +27,22 @@ class MyApp extends StatelessWidget {
       themeMode: ThemeMode.dark,
       home: Scaffold(
         appBar: AppBar(
-          title: Text("Practicing Text"),
+          title: Text("Practicing Images"),
         ),
-        body: Column(
-            children: [
-              Text(
-                "24, blue, w900, italic",
-              style: TextStyle(fontSize: 24, color: Colors.blue, fontWeight: FontWeight.w900, fontStyle: FontStyle.italic),
-              ),
-              Container(
-                padding: EdgeInsets.all(16),
-                decoration: BoxDecoration(
-                  color: Colors.blue,
-                  borderRadius: BorderRadius.circular(8)
+        body: SingleChildScrollView(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  "Hy Flutter",
+                style: TextStyle(fontSize: 24, color: Colors.blue, fontWeight: FontWeight.w900, fontStyle: FontStyle.italic),
                 ),
-                child: Text("Container padding 16"),
-              ),
-              Container(
-                margin: EdgeInsets.symmetric(vertical: 16),
-                width: 200, height: 200,
-                alignment: Alignment.bottomRight,
-                decoration: BoxDecoration(
-                    gradient: LinearGradient(
-                      colors: [Colors.purple, Colors.deepPurpleAccent],
-                      begin: Alignment.topLeft,
-                    )
-                ),
-                child: Text("m-16 align-end", style: TextStyle(color: Colors.white),),
-              ),
-              Row(
-                children: [
-                  Container(width: 100, height: 50, color: Colors.pink,),
-                  Expanded(child: Container(height: 50, margin: EdgeInsets.only(left: 8), color: Colors.green,))
-                ],
-              ),
-              Container(
-                margin: EdgeInsets.all(10),
-                padding: EdgeInsets.all(16),
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                  border: Border.all(color: Colors.grey),
-                  borderRadius: BorderRadius.circular(8),
-                ),
-                child: Column(
-                  children: [
-                    Container(
-                      padding: EdgeInsets.all(8),
-                      decoration: BoxDecoration(
-                        color: Colors.blue,
-                        borderRadius: BorderRadius.circular(5)
-                      ),
-                      child: Text("Inner Container"),
-                    ),
-                    SizedBox(height: 20,),
-                    Container(
-                      padding: EdgeInsets.all(8),
-                      decoration: BoxDecoration(
-                          color: Colors.blue,
-                          borderRadius: BorderRadius.circular(5)
-                      ),
-                      child: Text("Inner Container"),
-                    )
-                  ],
-                ),
-              )
-            ],
-          ),
+                Padding(padding:EdgeInsets.all(8), child: Image.asset('assets/images/marek.jpg'),),
+                Padding(padding: EdgeInsets.all(8), child: Image.network('https://picsum.photos/250?image=8'),),
+                Padding(padding: EdgeInsets.all(8), child: Image.network('https://docs.flutter.dev/assets/images/404/dash_404.png'),),
+              ],
+            ),
+        ),
       ),
       debugShowCheckedModeBanner: false,
     );
